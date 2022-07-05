@@ -13,9 +13,9 @@ gene_mut_count <- data.frame(tapply(gene_mutations$Total, INDEX = list(gene_muta
 
 length(unique(gene_mutations$Gene)) #check to see that gene_mut_count has same number of genes as og df
 
-gene_mut_count$Gene <- row.names(gene_mut_count)
+gene_mut_count$Gene <- row.names(gene_mut_count) #make a row with the genes
 
-gene_mut_count$total <- rowSums(gene_mut_count)
+gene_mut_count$total <- rowSums(gene_mut_count) #sum mutations for total mutations
 
 gene_mut_count$male_ratio <- gene_mut_count$male/gene_mut_count$total
 
