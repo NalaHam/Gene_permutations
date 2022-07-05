@@ -28,7 +28,7 @@ mean(gene_mut_count$female_ratio) #0.383
 
 write.csv(gene_mut_count, file = "gene_mut_count_sex.csv")
 
-sum(gene_mut_count$male) / sum(gene_mut_count$total) #0.617, this is what dunford did to get a base prob
+sum(gene_mut_count_sex$male) / sum(gene_mut_count_sex$total) #0.617, this is what dunford did to get a base prob
 
 fm_muts <- gene_mut_count$female
 m_muts <- gene_mut_count$male

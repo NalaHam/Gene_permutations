@@ -59,6 +59,12 @@ data$gene <- "A1BG"
 data[is.na(data)] = 0 #make NA 0s
 
 
+table()
+
+
+
+
+
 
 
 for(i in 1:P){
