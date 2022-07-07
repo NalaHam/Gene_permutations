@@ -15,8 +15,8 @@ boxplot(small_data$Total~small_data$gender, las=1, ylab="number of mutations",
 
 sum(small_data$Total)
 
-test.stat1 <- (sum(small_data[which(small_data$gender=='male'),2 ])/ sum(small_data$Total)) - 
-                    (sum(gene_mut_count_sex$male) / sum(gene_mut_count_sex$total) #expect that this should be 0 or close to it. if it is greater than or equal, lets look into it
+test.stat1 <- abs((sum(small_data[which(small_data$gender=='male'),2 ])/ sum(small_data$Total)) - 
+                    (sum(gene_mut_count_sex$male) / sum(gene_mut_count_sex$total))) #expect that this should be 0 or close to it. if it is greater than or equal, lets look into it
   
 
 test.stat1
@@ -44,8 +44,8 @@ Perm.test.stat1 <- rep(0, P)
 # loop thru, and calculate the test-stats
 for (i in 1:P){
   # calculate the perm-test-stat1 and save it
-  Perm.test.stat1[i] <- (sum(PermSamples[which(small_data$gender=='male'),i ])/ sum(small_data$Total)) - 
-                              (sum(gene_mut_count_sex$male) / sum(gene_mut_count_sex$total))
+  Perm.test.stat1[i] <- abs((sum(PermSamples[which(small_data$gender=='male'),i ])/ sum(small_data$Total)) - 
+                              (sum(gene_mut_count_sex$male) / sum(gene_mut_count_sex$total)))
 }
 
 test.stat1 #reminder that the test statistic is 0.0447

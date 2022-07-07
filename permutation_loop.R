@@ -42,3 +42,5 @@ for (x in sec_ten_gene_list) {
   gene_mut_count_sex[ y , 7] <- c
 }
 
+
+write.csv(gene_mut_count_sex, file = "gene_mut_count_sex.csv")
