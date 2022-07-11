@@ -5,7 +5,7 @@ perm_gene_list <- gene_list[9758:9858]
 expected <- 0.61654709279636
 
 
-for (x in sec_ten_gene_list) {
+for (x in perm_gene_list) {
   data <- subset(df_for_perm, df_for_perm$Gene == x)
   k <- length(data$gender)
   row.names(data) <- c(1:k)
