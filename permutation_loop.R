@@ -18,7 +18,7 @@ for (x in perm_gene_list) {
   
   variable <- data$Total
   
-  #make empty df
+  #make empty matrix
   PermSamples <- matrix(0, nrow=n, ncol=P)
   
   for(i in 1:P){
