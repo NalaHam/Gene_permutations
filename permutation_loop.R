@@ -32,7 +32,7 @@ for (x in perm_gene_list) {
   for (j in 1:P){
     # calculate the perm-test-stat1 and save it
     Perm.test.stat1[j] <- abs((sum(PermSamples[which(data$gender=='male'),j ])/ sum(data$Total)) - 
-                                (sum(gene_mut_count_sex$male) / sum(gene_mut_count_sex$total)))
+                                expected)
   }
   
   #calculate the p-value, for all P
