@@ -1,6 +1,6 @@
 #Permutation test
 
-perm_gene_list <- gene_list[9758:9858]
+perm_gene_list <- gene_list[1:19515]
 
 expected <- 0.61654709279636
 
