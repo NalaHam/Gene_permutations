@@ -1,7 +1,7 @@
 # Gene_permutations
 
 #test for just one cancer to see if the loop works
-project <- filter(gene_mutations, gene_mutations$Project == "TCGA-XXXX") #put what ever cancer you want to test in the XXXX
+project <- subset(gene_mutations, gene_mutations$Project == "TCGA-XXXX") #put what ever cancer you want to test in the XXXX
 
 df_for_perm <- project[, c(2,14,17)]#condense df to be just gene, total, gender (these might be differ coln numbers for you)
 
