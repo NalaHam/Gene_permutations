@@ -51,12 +51,12 @@ for(f in projects) {                        #make a loop that goes through each 
     
     for(b in 8:18) #the row numbers with the cancers that you want, ex: the start of the cancer columns is col 8 and they go to 18
       c <- mean(Perm.test.stat1 >= test.stat1)
-      y <- which(grepl( x , gene_mut_count_sex_1$Gene)) #says what row the gene is in
+      y <- which(grepl( x , gene_mut_half$Gene)) #says what row the gene is in
     
-      gene_mut_count_sex_1[ y , b] <- c #adds c into row of the gene and column of the cancer 
+      gene_mut_half[ y , b] <- c #adds c into row of the gene and column of the cancer 
   }
 }
 
-write.csv(gene_mut_count_sex_1, file = "gene_mut_count_sex_1.csv")
+write.csv(gene_mut_half, file = "gene_mut_half.csv")
 
 #good Luck!
