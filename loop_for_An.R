@@ -6,7 +6,7 @@ expected <- 0.61654709279636
 
 projects <- unique(gene_mutations$Project) #get list of cancer projects to use in loop
 
-projects <- projects[14:25] #cancer projects that An is testing for
+projects <- projects[15:25] #cancer projects that An is testing for
 
 for(f in projects) {                        #make a loop that goes through each cancer 
   
