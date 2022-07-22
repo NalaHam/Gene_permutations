@@ -1,9 +1,9 @@
 # Gene_permutations
 
-#test for just one cancer to see if the loop works
+#permutation loop for specific cancer
 project <- subset(gene_mutations, gene_mutations$Project == "TCGA-XXXX") #put what ever cancer you want to test in the XXXX
 
-df_for_perm <- project[, c(2,14,17)]#condense df to be just gene, total, gender (these might be differ coln numbers for you)
+df_for_perm <- project[, c(2,14,17)]#condense df to be just columns for gene, total, gender 
 
 gene_list <- unique(project$Gene) #list of genes that are mutated in cancer type (this is done because some cancers don't have mutations in all the genes)
 
@@ -17,7 +17,7 @@ for (x in gene_list) {
   #values
   n <- length(data$gender) 
   
-  P <- 500000 #new permutation count
+  P <- 100000 #number of permuations to create
   
   variable <- data$Total
   
@@ -42,15 +42,12 @@ for (x in gene_list) {
   c <- mean(Perm.test.stat1 >= test.stat1)
   y <- which(grepl( x , gene_mut_half$Gene)) #says what row the gene is in
   
-  gene_mut_half[ y , XXX] <- c #Make XXX the column number the cancer you are testing is ex: TCGA-BLCA is the cancer project 
-                                      #you are testing and it is column 10 in gene_mut_half
+  gene_mut_half[ y , XXX] <- c #Make XXX the column number the cancer you are testing is ex: XXX = 10 if TCGA-BLCA is the cancer project 
+                                      #you are testing and it is column 10 in gene_mut_count_sex df
 }
 }
 
-#After this is done check the column in the gene_mut_half to see if there are any numbers there for any genes. 
-#remember that for some cancers there isn't data for every gene.
+#make df to test if all genes were accounted for:
 
-#to test you can subset the df into just the genes that the cancer has with:
-
-XXXX_df <- gene_mut_half[gene_mut_half$Gene %in% gene_list,] #this should work...
+XXXX_df <- gene_mut_count_sex[gene_mut_count_sex$Gene %in% gene_list,] #makes a df from the gene_mut_count_sex with just the genes in gene_list
 
